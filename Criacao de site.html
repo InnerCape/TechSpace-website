@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TechSpace | Criação de Sites</title>
+
+    <link rel="icon" type="image/png" href="TS-logo.jpg" />
+
+    <style>
+        /* GENERAL */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-btn {
+            background: #f97316;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+
+        /* HERO SECTION */
+        .service-hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
+            background: linear-gradient(rgba(0, 0, 0, 0.45),
+                    rgba(0, 0, 0, 0.45)),
+                url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1470&q=80");
+            background-size: cover;
+            background-position: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .service-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .hero-btn {
+            background: #f97316;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #ea580c;
+            transform: scale(1.05);
+        }
+
+        /* BENEFITS */
+        .site-benefits {
+            padding: 80px 10%;
+            text-align: center;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .benefit {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1 1 280px;
+            transition: 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .benefit:hover {
+            transform: translateY(-6px);
+        }
+
+        .benefit.highlight {
+            border-color: #f97316;
+        }
+
+        /* PACKAGES */
+        .site-packages {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 34px;
+            margin-bottom: 50px;
+            animation: fadeUp 1s ease;
+        }
+
+        .packages {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .package {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 340px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+            opacity: 0;
+            transform: translateY(60px);
+
+            animation: cardAppear 1s ease forwards;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .package:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .package:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        /* ICON */
+        .package-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        /* Remove orange border from featured */
+        .featured {
+            transform: scale(1.05);
+            border: none;
+        }
+
+        /* Align bullet points */
+        .package ul {
+            text-align: left;
+            padding-left: 18px;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        /* BUTTON */
+        .plan-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #f97316;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .plan-btn:hover {
+            background: #ea580c;
+            transform: scale(1.08);
+        }
+
+        /* HOVER EFFECT */
+        .package:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* CTA */
+        .service-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: #0f766e;
+            color: white;
+        }
+
+        .cta-btn {
+            background: #f97316;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111;
+            color: white;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatIcon {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .benefits-grid,
+            .packages {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .package {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <img src="TS-logo.jpg" width="50" alt="TechSpace Logo" />
+        </div>
+
+        <ul>
+            <li><a href="home.html">Início</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Portfólio</a></li>
+            <li><a href="Contato.html">Contato</a></li>
+            <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="service-hero">
+        <div class="hero-content">
+            <h1>Criação de Sites Profissionais</h1>
+            <p>Você é um empreendedor, empresa ou profissional autônomo que quer aumentar sua presença digital?</p>
+            <p>Nós criamos sites modernos e profissionais para ajudar seu negócio a crescer na internet.</p>
+            <a href="https://wa.me/27677519907" class="hero-btn" target="_blank" rel="noopener noreferrer">Falar no
+                WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="site-benefits">
+        <h2>Por que ter um site profissional?</h2>
+        <div class="benefits-grid">
+            <div class="benefit highlight">
+                <h3>Mais Clientes</h3>
+                <p>Seu negócio pode ser encontrado facilmente no Google.</p>
+            </div>
+            <div class="benefit highlight">
+                <h3>Credibilidade</h3>
+                <p>Um site profissional aumenta a confiança na sua marca.</p>
+            </div>
+            <div class="benefit highlight">
+                <h3>Presença 24h</h3>
+                <p>Seu negócio disponível online todos os dias.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="site-packages">
+        <h2 class="section-title">Nossos Planos</h2>
+        <div class="packages">
+            <div class="package">
+                <div class="package-icon">🚀</div>
+                <h3>Site Básico</h3>
+                <p>Ideal para profissionais autônomos.</p>
+                <ul>
+                    <li>1 a 3 páginas</li>
+                    <li>Design moderno</li>
+                    <li>Responsivo (mobile)</li>
+                    <li>Botão de WhatsApp</li>
+                </ul>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank"
+                    rel="noopener noreferrer">Começar</a>
+            </div>
+            <div class="package featured">
+                <div class="package-icon">💼</div>
+                <h3>Site Profissional</h3>
+                <p>Perfeito para empresas.</p>
+                <ul>
+                    <li>Até 7 páginas</li>
+                    <li>Design personalizado</li>
+                    <li>Integração com Instagram</li>
+                    <li>Formulário de contato</li>
+                    <li>SEO básico</li>
+                </ul>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank" rel="noopener noreferrer">Solicitar
+                    Orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="service-cta">
+        <h2>Vamos criar o site do seu negócio?</h2>
+        <p>Entre em contato agora e receba um orçamento gratuito.</p>
+        <a href="https://wa.me/27677519907" class="cta-btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 TechSpace | Criação de Sites Profissionais</p>
+    </footer>
+
+</body>
+
+</html>
