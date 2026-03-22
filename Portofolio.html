@@ -4,95 +4,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechSpace - Criação de sites profissionais, e-commerce e soluções digitais modernas. Conheça nosso portfólio e entre em contato.">
+    <meta name="keywords" content="criação de sites, desenvolvimento web, e-commerce, portfólio, TechSpace">
+    <meta name="author" content="TechSpace">
+
     <title>TechSpace | Portfólio</title>
+
+    <link rel="icon" type="image/png" href="TS-logo.jpg">
     <link rel="stylesheet" href="Portofolio.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
-<section class="portfolio">
+</head>
 
-    <h2>Nosso Portfólio</h2>
+<body>
 
-    <div class="portfolio-grid">
 
-        <!-- Projeto 1 -->
-        <div class="portfolio-card">
-            <h3>Barbearia Estilo Fino</h3>
-            <p>Website moderno para barbearia com agendamento via WhatsApp.</p>
+    <!-- NAVBAR -->
 
-            <ul>
-                <li>✔ Design Mobile</li>
-                <li>✔ Página Rápida</li>
-                <li>✔ Design Moderno</li>
-                <li>✔ Botão do WhatsApp</li>
-            </ul>
+    <nav>
 
-            <a href="#" target="_blank">Ver Projeto</a>
+        <div class="logo">
+            <img src="TS-logo.jpg" alt="TechSpace Logo">
         </div>
 
+        <ul>
 
-        <!-- Projeto 2 -->
-        <div class="portfolio-card">
-            <h3>Restaurante Bella Massa</h3>
-            <p>Site profissional para restaurante com cardápio online.</p>
+            <li><a href="index.html">Início</a></li>
 
-            <ul>
-                <li>✔ Design Mobile</li>
-                <li>✔ Página Rápida</li>
-                <li>✔ Design Moderno</li>
-                <li>✔ Botão do WhatsApp</li>
-            </ul>
+            <li class="dropdown">
 
-            <a href="#" target="_blank">Ver Projeto</a>
+                <a href="#">Serviços</a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a href="#">Criação de Sites</a></li>
+                    <li><a href="#">Lojas Virtuais</a></li>
+                    <li><a href="#">Manutenção de Sites</a></li>
+
+                </ul>
+
+            </li>
+
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="Contato.html">Contato</a></li>
+
+            <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="portfolio-hero">
+
+        <div>
+
+            <h1 data-aos="fade-up">Nosso Portfólio</h1>
+
+            <p data-aos="fade-up" data-aos-delay="200">
+
+                Conheça quem está por trás da TechSpace
+
+            </p>
+
         </div>
 
+    </section>
 
-        <!-- Projeto 3 -->
-        <div class="portfolio-card">
-            <h3>Loja Fitness Power</h3>
-            <p>Loja virtual moderna para venda de roupas fitness.</p>
+    <!-- ABOUT -->
 
-            <ul>
-                <li>✔ Design Mobile</li>
-                <li>✔ Página Rápida</li>
-                <li>✔ Design Moderno</li>
-                <li>✔ Botão do WhatsApp</li>
-            </ul>
+    <section class="profile">
 
-            <a href="#" target="_blank">Ver Projeto</a>
+        <div class="profile-container">
+
+            <div class="profile-image" data-aos="fade-right">
+
+                <img src="myself for site.png" alt="Manu">
+
+            </div>
+
+
+            <div class="profile-text" data-aos="fade-left">
+
+                <h2>Sobre Nós</h2>
+
+                <p>
+                    Somos uma empresa focada em soluções digitais,
+                    ajudando negócios a crescer com tecnologia moderna.
+                </p>
+
+                <p>
+                    Fundado por Manu, profissional na area com experiência internacional em TI.
+                </p>
+
+                <p>
+                    Criamos sites profissionais, e-commerce
+                    e soluções digitais personalizadas.
+                </p>
+
+                <p>
+                    Nosso foco é criar soluções simples,
+                    eficientes e confiáveis.
+                </p>
+
+
+                <div class="about-highlights">
+
+                    <div class="highlight">
+                        <h3>Experiência</h3>
+                        <span>International</span>
+                    </div>
+
+                    <div class="highlight">
+                        <h3>Foco em 100%</h3>
+                        <span>Clientes</span>
+                    </div>
+
+                    <div class="highlight">
+                        <h3>Suporte</h3>
+                        <span>Rápido</span>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
+    </section>
 
-        <!-- Projeto 4 -->
-        <div class="portfolio-card">
-            <h3>Clínica Sorriso</h3>
-            <p>Website profissional para clínica odontológica.</p>
 
-            <ul>
-                <li>✔ Design Mobile</li>
-                <li>✔ Página Rápida</li>
-                <li>✔ Design Moderno</li>
-                <li>✔ Botão do WhatsApp</li>
-            </ul>
 
-            <a href="#" target="_blank">Ver Projeto</a>
+    <!-- PROJECTS -->
+
+    <section class="projects">
+
+        <h2 data-aos="fade-up">Projetos Recentes</h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card" data-aos="zoom-in">
+
+                <img src="project1.jpg">
+
+                <h3>Website Corporativo</h3>
+
+                <p>Site profissional para empresa.</p>
+
+            </div>
+
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+
+                <img src="project2.jpg">
+
+                <h3>Loja Virtual</h3>
+
+                <p>E-commerce moderno.</p>
+
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+
+                <img src="project3.jpg">
+
+                <h3>Sistema Web</h3>
+
+                <p>Plataforma digital de gestão.</p>
+
+            </div>
+
         </div>
 
+    </section>
 
-        <!-- Projeto 5 -->
-        <div class="portfolio-card">
-            <h3>Academia PowerFit</h3>
-            <p>Site moderno para academia com apresentação de planos.</p>
+    <!-- TECHNOLOGIES -->
 
-            <ul>
-                <li>✔ Design Mobile</li>
-                <li>✔ Página Rápida</li>
-                <li>✔ Design Moderno</li>
-                <li>✔ Botão do WhatsApp</li>
-            </ul>
+    <section class="tech">
 
-            <a href="#" target="_blank">Ver Projeto</a>
+        <h2 data-aos="fade-up">Tecnologias</h2>
+
+        <div class="tech-grid">
+
+            <span data-aos="fade-up">HTML5</span>
+            <span data-aos="fade-up" data-aos-delay="100">CSS3</span>
+            <span data-aos="fade-up" data-aos-delay="200">JavaScript</span>
+            <span data-aos="fade-up" data-aos-delay="300">WordPress</span>
+            <span data-aos="fade-up" data-aos-delay="400">Shopify</span>
+            <span data-aos="fade-up" data-aos-delay="500">SEO</span>
+
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials">
+
+        <h2 data-aos="fade-up">O que dizem nossos clientes</h2>
+
+        <div class="testimonial-box">
+
+            <div class="testimonial" data-aos="fade-right">
+
+                <p>
+                    "Excelente serviço! Nosso site ficou incrível."
+                </p>
+
+                <h4>Cliente Empresarial</h4>
+
+            </div>
+
+
+            <div class="testimonial" data-aos="fade-up">
+
+                <p>"A TechSpace criou um site profissional e moderno para o nosso negócio."
+                </p>
+
+                <h4>Professora Autônoma</h4>
+            </div>
+
+            <div class="testimonial" data-aos="fade-left">
+
+                <p>
+                    "Profissionalismo e suporte rápido."
+                </p>
+
+                <h4>Loja Online</h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2 data-aos="fade-up">
+
+            Pronto para criar seu site?
+
+        </h2>
+
+        <a href="https://wa.me/+27677519907" target="_blank">
+
+            Falar no WhatsApp
+
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>© 2026 TechSpace | Criação de Sites Profissionais</p>
+
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+</body>
+
+</html>
