@@ -156,6 +156,48 @@
             display: block;
         }
 
+        /* ===== BOTÃO DE MENU MOBILE ===== */
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .menu-btn:hover {
+            background: rgba(15, 95, 86, 0.1);
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            transition: var(--transition);
+        }
+
+        .hamburger path {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            transition: var(--transition);
+        }
+
+        .menu-btn.active .hamburger path:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-btn.active .hamburger path:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.active .hamburger path:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
         /* ===== HERO SECTION ===== */
         .service-hero {
             height: 85vh;
@@ -231,6 +273,93 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-xl);
             background: linear-gradient(135deg, #e66a1a, var(--accent-color));
+        }
+
+        .hero-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 1rem 0 1.5rem;
+            flex-wrap: wrap;
+            font-weight: 600;
+            color: #eaeaea;
+        }
+
+        .hero-highlights span {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.55rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+        }
+
+        .process-section {
+            padding: 4.5rem 8%;
+            background: #ffffff;
+            color: var(--dark-color);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .process-step {
+            background: var(--background-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1.1rem;
+            text-align: center;
+        }
+
+        .process-step h3 {
+            margin-bottom: 0.7rem;
+            color: var(--primary-color);
+        }
+
+        .portfolio {
+            padding: 4.5rem 8%;
+            background: #f7fafc;
+            color: var(--dark-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .portfolio-card h3 {
+            margin: 0.9rem 1rem 0.4rem;
+        }
+
+        .portfolio-card p {
+            margin: 0 1rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         /* ===== BENEFITS ===== */
@@ -371,6 +500,13 @@
 
         .featured::before {
             background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0.75rem 0;
         }
 
         /* Align bullet points */
@@ -556,6 +692,81 @@
             }
         }
 
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2rem;
+                padding-top: 2rem;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            nav ul.show {
+                transform: translateX(0);
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: none;
+                border: none;
+                margin-top: 0.5rem;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            .site-benefits,
+            .site-packages,
+            .service-cta {
+                padding: 4rem 5%;
+            }
+
+            .benefit,
+            .package {
+                padding: 2rem;
+            }
+
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .nav-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
         @media (max-width: 480px) {
             .site-benefits,
             .site-packages,
@@ -583,7 +794,7 @@
             <img src="TS-logo.jpg" alt="TechSpace Logo" />
         </div>
 
-        <ul>
+        <ul id="menu">
             <li><a href="index.html">Início</a></li>
 
             <li class="dropdown">
@@ -599,16 +810,26 @@
             <li><a href="Contato.html">Contato</a></li>
             <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
         </ul>
+        <button id="menu-toggle" class="menu-btn" title="Menu">
+            <svg class="hamburger" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+            </svg>
+        </button>
     </nav>
 
     <!-- HERO -->
     <section class="service-hero">
         <div class="hero-content">
             <h1>Criação de Sites Profissionais</h1>
-            <p>Você é um empreendedor, empresa ou profissional autônomo que quer aumentar sua presença digital?</p>
-            <p>Nós criamos sites modernos e profissionais para ajudar seu negócio a crescer na internet.</p>
-            <a href="https://wa.me/27677519907" class="hero-btn" target="_blank" rel="noopener noreferrer">Falar no
-                WhatsApp</a>
+            <p>Sites modernos, responsivos e otimizados para SEO — prontos para converter visitantes em clientes.</p>
+            <p>Fale com nosso time e garanta entrega rápida, design sob medida e suporte constante.</p>
+            <div class="hero-highlights">
+                <span>✅ Site mobile-first</span>
+                <span>✅ Integração WhatsApp</span>
+                <span>✅ Dominio + SEO inicial</span>
+            </div>
+            <a href="https://wa.me/27677519907" class="hero-btn" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            <a href="#site-packages" class="hero-btn" style="background:white; color: var(--primary-color); margin-left: 1rem;">Ver Planos</a>
         </div>
     </section>
 
@@ -631,13 +852,36 @@
         </div>
     </section>
 
+    <!-- PROCESSO -->
+    <section class="process-section">
+        <h2 class="section-title">Como Trabalhamos</h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <h3>1. Briefing</h3>
+                <p>Analisamos suas metas, público e referências para definir o site ideal.</p>
+            </div>
+            <div class="process-step">
+                <h3>2. Protótipo</h3>
+                <p>Enviamos mockup visual para validação antes de iniciar o desenvolvimento.</p>
+            </div>
+            <div class="process-step">
+                <h3>3. Desenvolvimento</h3>
+                <p>Construímos com tecnologia moderna, responsiva e rápido tempo de carregamento.</p>
+            </div>
+            <div class="process-step">
+                <h3>4. Publicação</h3>
+                <p>Deploy + testes + entrega final.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- PACKAGES -->
     <section class="site-packages">
         <h2 class="section-title">Nossos Planos</h2>
         <div class="packages">
             <div class="package">
                 <div class="package-icon">🚀</div>
-                <h3>Site Básico</h3>
+                <h3>Start Digital</h3>
                 <p>Ideal para profissionais autônomos.</p>
                 <ul>
                     <li>1 a 3 páginas</li>
@@ -645,23 +889,47 @@
                     <li>Responsivo (mobile)</li>
                     <li>Botão de WhatsApp</li>
                 </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank"
-                    rel="noopener noreferrer">Começar</a>
+                <p class="price">R$ 119,90/mês</p>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank" rel="noopener noreferrer">Começar</a>
             </div>
             <div class="package featured">
-                <div class="package-icon">💼</div>
-                <h3>Site Profissional</h3>
-                <p>Perfeito para empresas.</p>
+                <div class="package-icon">🌟</div>
+                <h3>Site Médio</h3>
+                <p>Para quem já precisa de mais alcance.</p>
                 <ul>
-                    <li>Até 7 páginas</li>
+                    <li>4 a 5 páginas</li>
                     <li>Design personalizado</li>
-                    <li>Integração com Instagram</li>
-                    <li>Formulário de contato</li>
-                    <li>SEO básico</li>
+                    <li>Formulário de contato + domínio</li>
+                    <li>SEO básico + manutenção</li>
+                    <li>1 nova seção por mês</li>
                 </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank" rel="noopener noreferrer">Solicitar
-                    Orçamento</a>
+                <p class="price">R$ 221,90/mês</p>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank" rel="noopener noreferrer">Começar</a>
             </div>
+            <div class="package">
+                <div class="package-icon">🏆</div>
+                <h3>Presença Total</h3>
+                <p>Plano completo para quem quer dominar online.</p>
+                <ul>
+                    <li>Até 7 páginas com links e vídeos</li>
+                    <li>Manutenção completa de conteúdo</li>
+                    <li>Novos dados semanais e página extra</li>
+                    <li>Otimização SEO avançada</li>
+                    <li>Suporte prioritário</li>
+                </ul>
+                <p class="price">R$ 347,90/mês</p>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank" rel="noopener noreferrer">Começar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+        <h2 class="section-title">Projetos Recentes</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card"><img src="https://via.placeholder.com/400x250" alt="Projeto 1"><h3>Landing Page Empresa</h3><p>Website com foco em conversão e contato direto por WhatsApp.</p></div>
+            <div class="portfolio-card"><img src="https://via.placeholder.com/400x250" alt="Projeto 2"><h3>E-commerce Rápido</h3><p>Loja online com catálogo responsivo e carrinho integrado.</p></div>
+            <div class="portfolio-card"><img src="https://via.placeholder.com/400x250" alt="Projeto 3"><h3>Site Institucional</h3><p>Portal completo com páginas de serviços, blog e contato.</p></div>
         </div>
     </section>
 
@@ -676,6 +944,8 @@
     <footer>
         <p>© 2026 TechSpace | Criação de Sites Profissionais</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 

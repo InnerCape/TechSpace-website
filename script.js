@@ -8,6 +8,7 @@ if (menuToggle) {
 function toggleMenu() {
     const menu = document.getElementById("menu");
     menu.classList.toggle("show");
+    menuToggle.classList.toggle("active");
 }
 
 // SCROLL ANIMATION INITIALIZATION
