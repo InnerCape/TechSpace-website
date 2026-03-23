@@ -19,6 +19,45 @@
 --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark Mode */
+[data-theme="dark"] {
+--background-color: #1F2933;
+--text-color: #F5F7F6;
+--text-light: #9CA3AF;
+--white: #1F2933;
+--dark-color: #F5F7F6;
+--shadow-sm: 0 1px 2px 0 rgb(255 255 255 / 0.1);
+--shadow-md: 0 4px 6px -1px rgb(255 255 255 / 0.1), 0 2px 4px -2px rgb(255 255 255 / 0.1);
+--shadow-lg: 0 10px 15px -3px rgb(255 255 255 / 0.1), 0 4px 6px -4px rgb(255 255 255 / 0.1);
+--shadow-xl: 0 20px 25px -5px rgb(255 255 255 / 0.1), 0 8px 10px -6px rgb(255 255 255 / 0.1);
+}
+
+[data-theme="dark"] nav {
+background: rgba(31, 41, 51, 0.95);
+}
+
+[data-theme="dark"] .dropdown-menu {
+background: var(--dark-color);
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* ===== CONFIGURAÇÕES GLOBAIS ===== */
@@ -109,6 +148,43 @@ cursor: pointer;
 transform:translateY(-2px);
 box-shadow: var(--shadow-lg);
 }
+
+/* ===== THEME TOGGLE ===== */
+
+.theme-btn {
+background: none;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+color: var(--text-color);
+transition: var(--transition);
+padding: 0.5rem;
+border-radius: 8px;
+margin-left: 1rem;
+}
+
+.theme-btn:hover {
+background: rgba(15, 95, 86, 0.1);
+color: var(--primary-color);
+}
+
+/* ===== BOTÃO DE MENU MOBILE ===== */
+
+.menu-btn {
+display: none;
+background: none;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+color: var(--text-color);
+transition: var(--transition);
+padding: 0.5rem;
+border-radius: 8px;
+}
+
+.menu-btn:hover {
+background: rgba(15, 95, 86, 0.1);
+color: var(--primary-color);
 }
 
 /* ===== DROPDOWN SERVIÇOS ===== */
@@ -192,6 +268,7 @@ text-decoration:none;
 font-weight:bold;
 
 transition:0.25s;
+animation: pulse 2s infinite;
 }
 
 .btn:hover{

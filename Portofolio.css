@@ -101,6 +101,25 @@ transform:translateY(-2px);
 box-shadow: var(--shadow-lg);
 }
 
+/* ===== BOTÃO DE MENU MOBILE ===== */
+
+.menu-btn {
+display: none;
+background: none;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+color: var(--text-color);
+transition: var(--transition);
+padding: 0.5rem;
+border-radius: 8px;
+}
+
+.menu-btn:hover {
+background: rgba(15, 95, 86, 0.1);
+color: var(--primary-color);
+}
+
 
 
 /* DROPDOWN */
@@ -523,6 +542,57 @@ border-top:1px solid rgba(255,255,255,0.1);
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    nav ul.show {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: none;
+        border: none;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
 .profile-container {
 flex-direction: column;
 text-align: center;
@@ -545,15 +615,6 @@ gap: 1rem;
 .tech-grid span {
 padding: 0.75rem 1.5rem;
 font-size: 0.85rem;
-}
-
-nav ul {
-gap: 1rem;
-}
-
-nav a {
-font-size: 0.9rem;
-padding: 0.5rem;
 }
 
 .nav-btn {

@@ -23,23 +23,24 @@
             <img src="TS-logo.jpg" alt="Logo da TechSpace">
         </div>
 
-        <ul>
-            <li><a href="home.html">Início</a></li>
+        <ul id="menu">
+            <li><a href="index.html">Início</a></li>
 
             <li class="dropdown">
                 <a href="#">Serviços</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Criação de Sites</a></li>
+                    <li><a href="Criacao de site.html">Criação de Sites</a></li>
                     <li><a href="#">Lojas Virtuais</a></li>
                     <li><a href="#">Manutenção de Sites</a></li>
                 </ul>
             </li>
 
-            <li><a href="#">Portfólio</a></li>
+            <li><a href="Portofolio.html">Portfólio</a></li>
             <li><a href="Contato.html">Contato</a></li>
             <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
         </ul>
-
+        <button id="theme-toggle" class="theme-btn" title="Alternar Tema">🌙</button>
+        <button id="menu-toggle" class="menu-btn" title="Menu">☰</button>
     </nav>
 
 
@@ -61,19 +62,19 @@
             <div class="contact-form">
 
                 <label>Nome completo</label>
-                <input type="text" placeholder="Seu nome">
+                <input type="text" id="nome" placeholder="Seu nome">
 
                 <label>Empresa</label>
-                <input type="text" placeholder="Nome da empresa">
+                <input type="text" id="empresa" placeholder="Nome da empresa">
 
                 <label>Email</label>
-                <input type="email" placeholder="seuemail@email.com">
+                <input type="email" id="email" placeholder="seuemail@email.com">
 
                 <label>Telefone</label>
-                <input type="text" placeholder="Inclua o código do país">
+                <input type="text" id="telefone" placeholder="Inclua o código do país">
 
                 <label>Área de interesse</label>
-                <select>
+                <select id="area">
                     <option>—Escolha uma opção—</option>
                     <option>Criação de Sites</option>
                     <option>Loja Virtual</option>
@@ -81,9 +82,9 @@
                 </select>
 
                 <label>Mensagem</label>
-                <textarea placeholder="Digite sua mensagem ou dúvida aqui..."></textarea>
+                <textarea id="mensagem" placeholder="Digite sua mensagem ou dúvida aqui..."></textarea>
 
-                <button class="form-btn">Enviar Mensagem</button>
+                <button class="form-btn" id="enviarBtn">Enviar Mensagem</button>
 
             </div>
 
@@ -108,6 +109,8 @@
         <p>© 2026 TechSpace | Criação de Sites Profissionais</p>
 
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
