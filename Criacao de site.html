@@ -31,6 +31,28 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Dark Mode */
+        [data-theme="dark"] {
+            --background-color: #1F2933;
+            --text-color: #F5F7F6;
+            --text-light: #9CA3AF;
+            --white: #1F2933;
+            --dark-color: #F5F7F6;
+            --shadow-sm: 0 1px 2px 0 rgb(255 255 255 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(255 255 255 / 0.1), 0 2px 4px -2px rgb(255 255 255 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(255 255 255 / 0.1), 0 4px 6px -4px rgb(255 255 255 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(255 255 255 / 0.1), 0 8px 10px -6px rgb(255 255 255 / 0.1);
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(31, 41, 51, 0.95);
+        }
+
+        [data-theme="dark"] .dropdown-menu {
+            background: var(--dark-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
         /* GENERAL */
@@ -52,12 +74,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 8%;
+            padding: 1.5rem 6%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 2px solid var(--primary-color);
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
+            animation: fadeInDown 0.8s ease-out;
         }
 
         /* ===== LOGO ===== */
@@ -95,6 +118,27 @@
             background: rgba(15, 95, 86, 0.1);
         }
 
+        /* Active page indicator */
+
+        nav a.active {
+            color: var(--primary-color);
+            background: rgba(15, 95, 86, 0.15);
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background: var(--accent-color);
+            border-radius: 1px;
+        }
+
         .nav-btn {
             background: linear-gradient(135deg, var(--accent-color), #e66a1a);
             color: white;
@@ -110,6 +154,25 @@
         .nav-btn:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== THEME TOGGLE ===== */
+
+        .theme-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 8px;
+            margin-left: 1rem;
+        }
+
+        .theme-btn:hover {
+            background: rgba(15, 95, 86, 0.1);
+            color: var(--primary-color);
         }
 
         /* ===== DROPDOWN ===== */
@@ -211,6 +274,7 @@
                 url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1470&q=80");
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             position: relative;
             overflow: hidden;
         }
@@ -629,7 +693,16 @@
         }
 
         /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
             from {
                 opacity: 0;
                 transform: translateY(40px);
@@ -767,6 +840,27 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .service-hero {
+                background-attachment: scroll;
+            }
+
+            .site-benefits,
+            .site-packages,
+            .service-cta {
+                padding: 4rem 5%;
+            }
+
+            .benefit,
+            .package {
+                padding: 1.5rem;
+            }
+
+            nav {
+                padding: 1rem 5%;
+            }
+        }
+
         @media (max-width: 480px) {
             .site-benefits,
             .site-packages,
@@ -781,6 +875,12 @@
 
             nav {
                 padding: 1rem 5%;
+            }
+
+            .service-hero {
+                height: auto;
+                min-height: 420px;
+                padding: 2.2rem 1rem;
             }
         }
     </style>
@@ -800,7 +900,7 @@
             <li class="dropdown">
                 <a href="#">Serviços</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Criacao de site.html">Criação de Sites</a></li>
+                    <li><a href="Criacao de site.html" class="active">Criação de Sites</a></li>
                     <li><a href="#">Lojas Virtuais</a></li>
                     <li><a href="#">Manutenção de Sites</a></li>
                 </ul>
@@ -810,6 +910,7 @@
             <li><a href="Contato.html">Contato</a></li>
             <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
         </ul>
+        <button id="theme-toggle" class="theme-btn" title="Alternar Tema">🌙</button>
         <button id="menu-toggle" class="menu-btn" title="Menu">
             <svg class="hamburger" viewBox="0 0 24 24" width="24" height="24">
                 <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>

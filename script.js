@@ -1,3 +1,28 @@
+// THEME TOGGLE
+
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+}
+
+function toggleTheme() {
+    document.documentElement.setAttribute('data-theme', 
+        document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+// LOAD THEME ON PAGE LOAD
+
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (themeToggle) themeToggle.textContent = '☀️';
+    }
+});
+
 // MOBILE MENU
 
 const menuToggle = document.getElementById('menu-toggle');
@@ -7,7 +32,9 @@ if (menuToggle) {
 
 function toggleMenu() {
     const menu = document.getElementById("menu");
+    const nav = document.querySelector("nav");
     menu.classList.toggle("show");
+    nav.classList.toggle("show");
     menuToggle.classList.toggle("active");
 }
 
