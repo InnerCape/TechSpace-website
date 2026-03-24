@@ -38,6 +38,10 @@
     background: rgba(31, 41, 51, 0.95);
 }
 
+[data-theme="dark"] nav ul {
+    background: rgba(31, 41, 51, 0.98);
+}
+
 [data-theme="dark"] .dropdown-menu {
     background: var(--dark-color);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -861,17 +865,13 @@ footer > p {
 
     .dropdown-menu {
         position: static;
-        display: none;
-        background: rgba(255, 255, 255, 0.9);
+        display: block;
+        background: var(--white);
         box-shadow: none;
         border: none;
         margin-top: 0.5rem;
         margin-left: 1rem;
         width: calc(100% - 1rem);
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: block;
     }
 
     .service-box {
@@ -940,7 +940,6 @@ footer > p {
         background-position: center top;
         background-size: cover;
     }
-}
 
     nav {
         padding: 1rem 5%;
@@ -965,12 +964,5 @@ footer > p {
 
     .cta {
         padding: 4rem 5%;
-    }
-}
-
-@media (max-width: 480px) and (orientation: portrait) {
-    .hero {
-        background-position: center center;
-        background-size: cover;
     }
 }
