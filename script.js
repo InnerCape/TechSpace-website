@@ -16,11 +16,9 @@ function toggleTheme() {
 // LOAD THEME ON PAGE LOAD
 
 window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if (themeToggle) themeToggle.textContent = '☀️';
-    }
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (themeToggle) themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 });
 
 // MOBILE MENU
@@ -40,10 +38,12 @@ function toggleMenu() {
 
 // SCROLL ANIMATION INITIALIZATION
 
-AOS.init({
-    duration: 1000,
-    once: true
-});
+if (window.AOS && typeof AOS.init === 'function') {
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+}
 
 // NAVBAR SCROLL EFFECT
 
@@ -92,26 +92,91 @@ if (document.getElementById('enviarBtn')) {
         const message = `Olá, meu nome é ${nome}. Empresa: ${empresa}. Email: ${email}. Telefone: ${telefone}. Área de interesse: ${area}. Mensagem: ${mensagem}. Gostaria de solicitar um orçamento.`;
 
         const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/27677519907?text=${encodedMessage}`;
+        const whatsappUrl = `https://wa.me/5583883341499?text=${encodedMessage}`;
 
         window.open(whatsappUrl, '_blank');
     });
 }
 
+// STICKY WHATSAPP BUTTON (MOBILE)
+
+function createStickyWhatsAppButton() {
+    const button = document.createElement('a');
+    button.href = 'https://wa.me/5583883341499';
+    button.target = '_blank';
+    button.className = 'sticky-whatsapp-btn';
+    button.title = 'Fale conosco no WhatsApp';
+    button.innerHTML = '💬 WhatsApp';
+    document.body.appendChild(button);
+
+    // Show button after scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            button.classList.add('show');
+        } else {
+            button.classList.remove('show');
+        }
+    });
+}
+
+// Initialize sticky button on mobile screens
+window.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+        createStickyWhatsAppButton();
+    }
+});
+
 // DARK MODE TOGGLE
 
-const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+const form = document.getElementById("contactForm");
+const btnText = document.getElementById("btnText");
+const loader = document.getElementById("loader");
+const popup = document.getElementById("successPopup");
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+if (popup) {
+    popup.classList.add("hidden");
+}
+
+if (form && btnText && loader && popup) {
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        btnText.textContent = "Enviando...";
+        loader.classList.remove("hidden");
+
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                Accept: "application/json",
+            },
+        });
+
+        loader.classList.add("hidden");
+        btnText.textContent = "Enviar Mensagem";
+
+        if (response.ok) {
+            form.reset();
+            popup.classList.remove("hidden");
+        } else {
+            alert("Erro ao enviar. Tente novamente.");
+        }
     });
+}
+
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted && form) {
+        form.reset();
+    }
+});
+
+function closePopup() {
+    const popupEl = document.getElementById("successPopup");
+    if (popupEl) {
+        popupEl.classList.add("hidden");
+    }
+    if (form) {
+        form.reset();
+    }
 }

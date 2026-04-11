@@ -8,10 +8,42 @@
     <meta name="keywords" content="criação de sites, desenvolvimento web, e-commerce, sites profissionais, TechSpace">
     <meta name="author" content="TechSpace">
 
-    <title>TechSpace | Pagina Inicial</title>
+    <title>Criação de Sites Profissionais, Suporte em TI e E-mail Corporativo | TechSpace</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TechSpace - IT Support & Web Solutions">
+    <meta property="og:description" content="Suporte de TI, sites rápidos, e-mail corporativo e domínios para pequenos negócios e profissionais.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.techspace.com.br">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TechSpace - IT Support & Web Solutions">
+    <meta name="twitter:description" content="Suporte de TI, sites rápidos, e-mail corporativo e domínios para pequenos negócios.">
 
     <link rel="icon" type="image/png" href="TS-logo.jpg">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema.org LocalBusiness Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TechSpace",
+      "description": "Criação de sites profissionais, e-commerce e soluções digitais modernas",
+      "url": "https://www.techspace.com.br",
+      "telephone": "+55 83 8834-1499",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "São Bernardo do Campo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$299-$899",
+      "image": "https://www.techspace.com.br/TS-logo.jpg",
+      "sameAs": ["https://www.instagram.com/techspace", "https://www.facebook.com/techspace"]
+    }
+    </script>
 </head>
 
 <body>
@@ -36,7 +68,7 @@
 
     <li><a href="Portofolio.html">Portfólio</a></li>
     <li><a href="Contato.html">Contato</a></li>
-    <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
+    <li><a href="https://wa.me/27677519907" target="_blank" class="nav-btn">Solicitar Orçamento</a></li>
 </ul>
         <button id="theme-toggle" class="theme-btn" title="Alternar Tema">🌙</button>
         <button id="menu-toggle" class="menu-btn" title="Menu">
@@ -48,81 +80,75 @@
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-columns">
+            <div class="hero-content">
+                <span class="eyebrow">TechSpace | Desenvolvimento Web e Suporte em TI</span>
+                <h1>Criação de sites profissionais, suporte em TI, domínios e e-mail corporativo.</h1>
+                <p>A TechSpace ajuda pequenas e médias empresas a crescer online com soluções rápidas e confiáveis.</p>
 
-        <div class="hero-content">
+                <div class="hero-buttons">
+                    <a href="Contato.html" class="btn">Solicitar Orçamento</a>
+                    <a href="Contato.html#contact" class="btn btn-secondary">Pedir Suporte</a>
+                    <a href="https://wa.me/27677519907" target="_blank" class="btn btn-secondary">Falar no WhatsApp</a>
+                </div>
 
-            <h1>Seu site profissional pronto em poucos dias</h1>
-
-            <p>Websites rápidos, responsivos e otimizados para smartphones — com estratégia de conversão.</p>
-
-            <div class="hero-highlights">
-                <span>Design Mobile First</span>
-                <span>SEO inicial</span>
-                <span>WhatsApp integrado</span>
+                <div class="hero-stats">
+                    <div>
+                        <strong>+5 anos</strong>
+                        <span>de experiência</span>
+                    </div>
+                    <div>
+                        <strong>+120</strong>
+                        <span>clientes atendidos</span>
+                    </div>
+                    <div>
+                        <strong>24h</strong>
+                        <span>Resposta rapida
+                        </span>
+                    </div>
+                </div>
             </div>
-
-            <a href="#" class="btn">Começar Agora</a>
-            <a href="#plans" class="btn" style="background:white; color:var(--primary-color); margin-left:0.8rem;">Ver Planos</a>
-
-        </div>
-
-    </section>
-
-    <!-- PROCESS -->
-    <section class="process">
-        <h2>Como funciona</h2>
-        <div class="process-grid">
-            <article>
-                <h3>1. Entendimento</h3>
-                <p>Briefing com metas e público para garantir produto alinhado.</p>
-            </article>
-            <article>
-                <h3>2. Design</h3>
-                <p>Proposta visual em até 48h e ajustes imediatos.</p>
-            </article>
-            <article>
-                <h3>3. Desenvolvimento</h3>
-                <p>Site responsivo, rápido e integrado à sua marca.</p>
-            </article>
-            <article>
-                <h3>4. Publicação</h3>
-                <p>Deploy, testes e entrega com treinamento.</p>
-            </article>
+            <div class="hero-visual">
+                <div class="hero-image-stack">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80" alt="Web design and development" class="hero-image main" />
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80" alt="Digital workspace and support" class="hero-image accent" />
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- SERVICES -->
-
-    <section class="services">
-
-        <h2>Nossos Serviços</h2>
-
-        <div class="service-box">
-
-            <div class="card">
-                <h3>Criação de Sites</h3>
-                <p>Sites modernos, rápidos e responsivos para o seu negócio.</p>
-            </div>
-
-            <div class="card">
-                <h3>Lojas Virtuais</h3>
-                <p>Criamos lojas online para você vender seus produtos pela internet.</p>
-            </div>
-
-            <div class="card">
-                <h3>Manutenção de Sites</h3>
-                <p>Cuidamos do seu site com atualizações e suporte mensal.</p>
-            </div>
-
+    <section class="services" id="services">
+        <div class="section-header">
+            <p class="section-label">Serviços essenciais</p>
+            <h2>O que entregamos</h2>
+            <p>Soluções completas de infraestrutura e presença digital para empresas que querem crescer sem complicação.</p>
         </div>
 
+        <div class="service-box">
+            <div class="card">
+                <h3>Sites Profissionais</h3>
+                <p>Rápidos. Modernos. Responsivos.</p>
+                <p>Feitos para atrair clientes e gerar resultados.</p>
+            </div>
+            <div class="card">
+                <h3>E-mail Corporativo</h3>
+                <p>Seu negócio com mais credibilidade.</p>
+                <p>E-mails profissionais com o seu domínio</p>
+            </div>
+            <div class="card">
+                <h3>Domínios & Hospedagem</h3>
+                <p>Tudo configurado para você.</p>
+                <p>Registro de domínio, hospedagem segura, estável e sem complicação.</p>
+            </div>
+        </div>
     </section>
 
     <!-- HIGHLIGHT BACKGROUND -->
     <section class="services-highlight" aria-label="Destaque de Portfólio">
         <div class="highlight-content">
-            <h2>Veja Nossos Projetos em Ação</h2>
-            <p>Cases de sucesso com design ágil, performance e conversão para sua marca.</p>
+            <h2>Sites, hospedagem e domínios com suporte dedicado</h2>
+            <p>Projetos completos para pequenas empresas, com opção de hospedagem conosco ou uso de domínio próprio.</p>
             <a href="Portofolio.html" class="btn btn-cta">Conheça o Portfólio</a>
         </div>
     </section>
@@ -132,40 +158,120 @@
         <h2>Planos Disponíveis</h2>
         <div class="plan-grid">
             <div class="plan">
-                <h3>Start Digital</h3>
-                <p class="price">R$ 299,00</p>
+                <h3>Site Inicial — a partir de </h3>
+                <p class ="price">R$ 299,00</p>
                 <ul>
-                    <li>Até 3 páginas (Ex: Início, Sobre, Contato)</li>
+                    <li>Ideal para quem está começando</li>
                     <li>Design responsivo (celular e tablet)</li>
-                    <li>Formulário de contato</li>
                     <li>Botão de WhatsApp integrado</li>
+                    <li>Hospedagem básica opcional</li>
                 </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Quero começar</a>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Contratar Agora</a>
             </div>
             <div class="plan">
-                <h3>Médio</h3>
+                <h3>Site Otimizado — a partir de</h3>
                 <p class="price">R$ 499,00</p>
                 <ul>
-                    <li>4 a 5 páginas</li>
-                    <li>Layout mais personalizado</li>
+                    <li>Mais páginas. Mais personalização</li>
                     <li>Integração com redes sociais</li>
                     <li>SEO básico (Google)</li>
                     <li>Manutenção incluída por 2 meses</li>
+                    <li>Domínio próprio ou gerenciado por nós</li>
                 </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Quero começar</a>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Contratar Agora</a>
             </div>
             <div class="plan">
-                <h3>Presença Total</h3>
+                <h3>Presença Total — a partir de</h3>
                 <p class="price">R$ 899,00</p>
                 <ul>
                     <li>Até 7 páginas</li>
-                    <li>Design mais avançado e profissional</li>
+                    <li>Design mais avançado</li>
                     <li>SEO otimizado</li>
                     <li>Integrações (WhatsApp, Instagram, etc.)</li>
                     <li>Suporte inicial após entrega</li>
                     <li>Manutenção incluída por 3 meses</li>
+                    <li>Hospedagem premium e domínio seguro</li>
                 </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Quero começar</a>
+                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Contratar Agora</a>
+            </div>
+        </div>
+        <p class="plan-note">Todos os planos podem incluir hospedagem comigo ou aceitar domínio próprio.</p>
+    </section>
+
+    <!-- PROBLEMS -->
+    <section class="problems">
+        <div class="section-header">
+            <p class="section-label">Nós resolvemos</p>
+            <h2>Dores de quem precisa de TI e presença online</h2>
+            <p>Eliminamos distrações técnicas para que você foque no seu negócio.</p>
+        </div>
+
+        <div class="problems-grid">
+            <div class="problem-card">
+                <h3>Seu site está lento ou desatualizado?</h3>
+                <p>Nós melhoramos a velocidade e o visual. para atrair mais clientes.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Problemas com e-mail?</h3>
+                <p>Configuramos e corrigimos falhas.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Problemas com e-mail?</h3>
+                <p>Atendimento rápido e Respondemos rápido e resolvemos.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Domínio ou hospedagem confusa?s</h3>
+                <p>Cuidamos de tudo para que sua presença online seja simples e <strong>segura</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section class="why-choose">
+        <div class="section-header">
+            <p class="section-label">Confiança e clareza</p>
+            <h2>Por que escolher a TechSpace</h2>
+            <p>Soluções simples. Atendimento direto. Resultados rápidos.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="card">
+                <h3>Atendimento humano</h3>
+                <p>Falamos com você direto pelo WhatsApp, email Sem complicação.</p>
+            </div>
+            <div class="card">
+                <h3>Entrega rápida</h3>
+                <p>Projetos e correções feitos com agilidade, sem enrolação.</p>
+            </div>
+            <div class="card">
+                <h3>Preço transparente</h3>
+                <p>Você sabe exatamente o que está pagando.</p>
+            </div>
+        </div>
+
+        <div class="testimonial-box">
+            <div class="testimonial">
+                <p>"A TechSpace deixou nosso site mais profissional e nossa comunicação muito melhor."</p>
+                <cite>— Cliente TechSpace</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-preview" id="contact">
+        <div class="contact-card">
+            <div>
+                <p class="section-label">Fale com a TechSpace</p>
+                <h2>Precisa de suporte ou orçamento?</h2>
+                <p>Entre em contato agora para atendimento rápido, orçamento gratuito e orientação técnica completa.</p>
+            </div>
+            <div class="contact-actions">
+                <a href="https://wa.me/5583883341499" target="_blank" class="btn">Chat no WhatsApp</a>
+                <a href="Contato.html" class="btn btn-secondary">Solicitar Orçamento</a>
+            </div>
+            <div class="contact-info">
+                <div><strong>Telefone</strong><span><a href="tel:+5583883341499">+55 83 8834-1499</a></span></div>
+                <div><strong>E-mail</strong><span><a href="mailto:info@techspace.com">info@techspace.com</a></span></div>
             </div>
         </div>
     </section>
@@ -201,11 +307,12 @@
 
     <section class="cta">
 
-        <h2>Seu site profissional começa aqui.
-            Com a TechSpace, é fácil tirar sua ideia do papel.
+        <h2>Crie seu site profissional hoje
+            Seu negócio precisa estar online e visível no Google.
+            Nós ajudamos você a chegar lá.
         </h2>
        
-        <a href="https://wa.me/+27677519907" target="_blank">Falar no WhatsApp</a>
+        <a href="https://wa.me/5583883341499" target="_blank" class="btn">Falar no WhatsApp Agora</a>
 
     </section>
 
@@ -217,23 +324,22 @@
 
             <div class="footer-section">
                 <h3>TechSpace</h3>
-                <p>Criação de sites profissionais e soluções digitais modernas.</p>
+                <p>Criação de sites profissionais e soluções digitais.</p>
             </div>
 
             <div class="footer-section">
                 <h3>Contato</h3>
-                <p>Telefone: <a href="tel:+27677519907">+55 83 8834-1499</a></p>
-                <p>WhatsApp: <a href="https://wa.me/27677519907" target="_blank">+27 677 519 907</a></p>
-                <p>Email: contato@techspace.com</p>
+                <p>Telefone: <a href="tel:+5583883341499">+55 83 8834-1499</a></p>
+                <p>Email: info@techspace.com</p>
                 <p>São Bernardo do Campo, SP</p>
             </div>
 
             <div class="footer-section">
                 <h3>Redes Sociais</h3>
                 <div class="social-links">
-                    <a href="#" target="_blank">Instagram</a>
-                    <a href="#" target="_blank">Facebook</a>
-                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/techs.space?igsh=a3JvcHB2cXA2czdp&utm_source=qr" target="_blank" title="Instagram TechSpace">Instagram</a>
+                    <a href="#" target="_blank" title="Facebook TechSpace">Facebook</a>
+                    <a href="#" target="_blank" title="LinkedIn TechSpace">LinkedIn</a>
                 </div>
             </div>
 

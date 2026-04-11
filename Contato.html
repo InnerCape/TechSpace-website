@@ -8,10 +8,25 @@
     <meta name="keywords" content="contato, TechSpace, desenvolvimento web, orçamento, sites profissionais">
     <meta name="author" content="TechSpace">
 
-    <title>TechSpace | Contato</title>
+    <title>Contato | TechSpace - Solicite seu Orçamento</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Entre em Contato - TechSpace">
+    <meta property="og:description" content="Fale conosco e receba um orçamento gratuito para seu site profissional.">
 
     <link rel="icon" type="image/png" href="TS-logo.jpg">
     <link rel="stylesheet" href="Contato.css">
+    
+    <!-- Schema.org Contact Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "TechSpace - Página de Contato",
+      "telephone": "+55 83 8834-1499",
+      "url": "https://www.techspace.com.br/contato"
+    }
+    </script>
 </head>
 
 <body>
@@ -37,7 +52,7 @@
 
             <li><a href="Portofolio.html">Portfólio</a></li>
             <li><a href="Contato.html" class="active">Contato</a></li>
-            <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
+            <li><a href="https://wa.me/5583883341499" target="_blank" class="nav-btn">Solicitar Orçamento</a></li>
         </ul>
         <button id="theme-toggle" class="theme-btn" title="Alternar Tema">🌙</button>
         <button id="menu-toggle" class="menu-btn" title="Menu">
@@ -58,39 +73,58 @@
 
 
     <!-- SEÇÃO CONTATO -->
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
 
         <div class="contact-container">
 
             <!-- FORMULÁRIO -->
-            <div class="contact-form">
+           <div class="contact-form">
+               <h2>Envie sua Mensagem</h2>
+               <p>Preencha o formulário abaixo e entraremos em contato em breve.</p>
 
-                <label>Nome completo</label>
-                <input type="text" id="nome" placeholder="Seu nome">
+  <form id="contactForm" action="https://formspree.io/f/meepynyj" method="POST" autocomplete="off">
 
-                <label>Empresa</label>
-                <input type="text" id="empresa" placeholder="Nome da empresa">
+    <label>Nome completo</label>
+    <input type="text" name="nome" autocomplete="off" required>
 
-                <label>Email</label>
-                <input type="email" id="email" placeholder="seuemail@email.com">
+    <label>Empresa</label>
+    <input type="text" name="empresa" autocomplete="off">
 
-                <label>Telefone</label>
-                <input type="text" id="telefone" placeholder="Inclua o código do país">
+    <label>Email</label>
+    <input type="email" name="email" autocomplete="off" required>
 
-                <label>Área de interesse</label>
-                <select id="area">
-                    <option>—Escolha uma opção—</option>
-                    <option>Criação de Sites</option>
-                    <option>Loja Virtual</option>
-                    <option>Manutenção de Sites</option>
-                </select>
+    <label>Telefone</label>
+    <input type="text" name="telefone" autocomplete="off">
 
-                <label>Mensagem</label>
-                <textarea id="mensagem" placeholder="Digite sua mensagem ou dúvida aqui..."></textarea>
+    <label>Área de interesse</label>
+    <select name="area" required>
+      <option value="">—Escolha uma opção—</option>
+      <option>Criação de Sites</option>
+      <option>Loja Virtual</option>
+      <option>Manutenção de Sites</option>
+      <option>Outro</option>
+    </select>
 
-                <button class="form-btn" id="enviarBtn">Enviar Mensagem</button>
+    <label>Mensagem</label>
+    <textarea name="mensagem" autocomplete="off" required></textarea>
 
-            </div>
+    <button type="submit" class="form-btn" id="submitBtn">
+      <span id="btnText">Enviar Mensagem</span>
+      <span id="loader" class="loader hidden"></span>
+    </button>
+
+  </form>
+
+</div>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="popup hidden">
+  <div class="popup-content">
+    <h3>✅ Mensagem enviada!</h3>
+    <p>Obrigado pelo contato. Vamos responder em breve.</p>
+    <button onclick="closePopup()">Fechar</button>
+  </div>
+</div>
 
 
             <!-- MAPA -->

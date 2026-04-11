@@ -8,11 +8,26 @@
     <meta name="keywords" content="criação de sites, desenvolvimento web, e-commerce, portfólio, TechSpace">
     <meta name="author" content="TechSpace">
 
-    <title>TechSpace | Portfólio</title>
+    <title>Portfólio | TechSpace - Conheça Nossos Projetos</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portfólio - TechSpace">
+    <meta property="og:description" content="Veja cases de sucesso com design ágil, performance e conversão para sua marca.">
 
     <link rel="icon" type="image/png" href="TS-logo.jpg">
     <link rel="stylesheet" href="Portofolio.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- Schema.org Portfolio/Gallery -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "TechSpace - Portfólio",
+      "description": "Projetos de design web e e-commerce da TechSpace",
+      "url": "https://www.techspace.com.br/portfolio"
+    }
+    </script>
 </head>
 
 </head>
@@ -49,7 +64,7 @@
             <li><a href="Portofolio.html" class="active">Portfólio</a></li>
             <li><a href="Contato.html">Contato</a></li>
 
-            <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
+            <li><a href="https://wa.me/5583883341499" target="_blank" class="nav-btn">Solicitar Orçamento</a></li>
 
         </ul>
         <button id="theme-toggle" class="theme-btn" title="Alternar Tema">🌙</button>
@@ -59,19 +74,20 @@
     <!-- HERO -->
 
     <section class="portfolio-hero">
-
-        <div>
-
-            <h1 data-aos="fade-up">Nosso Portfólio</h1>
-
-            <p data-aos="fade-up" data-aos-delay="200">
-
-                Conheça quem está por trás da TechSpace
-
-            </p>
-
+        <div class="portfolio-hero-inner">
+            <div class="hero-copy" data-aos="fade-up">
+                <span class="hero-label">Seja bem vindo</span>
+                <h1>Nosso Portfólio</h1>
+                <p>
+                    Projetos de sites enxutos, modernos e prontos para encantar clientes.
+                </p>
+                <div class="hero-badges">
+                    <span>Web Design</span>
+                    <span>Performance</span>
+                    <span>Confiança</span>
+                </div>
+            </div>
         </div>
-
     </section>
 
     <!-- ABOUT -->
@@ -81,9 +97,11 @@
         <div class="profile-container">
 
             <div class="profile-image" data-aos="fade-right">
-
-                <img src="" alt="Team">
-
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Design team working on a website">
+                <div class="profile-map" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80" alt="Mapa de atuação TechSpace">
+                    <span>Atuação em todo o Brasil</span>
+                </div>
             </div>
 
 
@@ -171,6 +189,27 @@
 
     </section>
 
+    <section class="hosting-highlight">
+        <div class="hosting-content" data-aos="fade-up">
+            <h2>Hospedagem e Domínios Flexíveis</h2>
+            <p>Você pode optar por hospedar seu site conosco ou usar o seu próprio domínio. Cuidamos da parte técnica para manter tudo funcionando.</p>
+        </div>
+    </section>
+
+    <section class="contact-preview">
+        <div class="contact-card">
+            <div>
+                <p class="section-label">Pronto para começar?</p>
+                <h2>Seu site profissional com suporte dedicado</h2>
+                <p>Escolha hospedagem conosco ou use seu domínio próprio. Fale com a TechSpace e tenha atendimento rápido.</p>
+            </div>
+            <div class="contact-actions">
+                <a href="https://wa.me/5583883341499" target="_blank" class="btn">Fale no WhatsApp</a>
+                <a href="Contato.html" class="btn btn-secondary">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </section>
+
     <!-- TECHNOLOGIES -->
 
     <section class="tech">
@@ -238,7 +277,7 @@
 
         </h2>
 
-        <a href="https://wa.me/+27677519907" target="_blank">
+        <a href="https://wa.me/5583883341499" target="_blank">
 
             Falar no WhatsApp
 
@@ -249,6 +288,32 @@
     <!-- FOOTER -->
 
     <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>TechSpace</h3>
+                <p>Criação de sites profissionais e soluções digitais modernas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Telefone: <a href="tel:+5583883341499">+55 83 8834-1499</a></p>
+                <p>WhatsApp: <a href="https://wa.me/5583883341499" target="_blank">+55 83 8834-1499</a></p>
+                <p>Email: info@techspace.com</p>
+                <p>São Bernardo do Campo, SP</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/techspace" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/techspace" target="_blank">Facebook</a>
+                    <a href="https://www.linkedin.com/company/techspace" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+        </div>
 
         <p>© 2026 TechSpace | Criação de Sites Profissionais</p>
 
