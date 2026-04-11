@@ -66,6 +66,12 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* ===== NAVBAR ===== */
         nav {
             position: sticky;
@@ -755,6 +761,8 @@
                 transform: translateY(0);
             }
         }
+
+        @keyframes fadeUp {
             from {
                 opacity: 0;
                 transform: translateY(40px);

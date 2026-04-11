@@ -650,8 +650,6 @@ nav a.active::after {
         text-decoration: none;
     }
 
-    background: var(--white);
-}
 
 .services h2 {
     margin-bottom: 3rem;
