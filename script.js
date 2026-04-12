@@ -92,7 +92,7 @@ if (document.getElementById('enviarBtn')) {
         const message = `Olá, meu nome é ${nome}. Empresa: ${empresa}. Email: ${email}. Telefone: ${telefone}. Área de interesse: ${area}. Mensagem: ${mensagem}. Gostaria de solicitar um orçamento.`;
 
         const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/5583883341499?text=${encodedMessage}`;
+        const whatsappUrl = `https://wa.me/27677519907?text=${encodedMessage}`;
 
         window.open(whatsappUrl, '_blank');
     });
@@ -102,7 +102,7 @@ if (document.getElementById('enviarBtn')) {
 
 function createStickyWhatsAppButton() {
     const button = document.createElement('a');
-    button.href = 'https://wa.me/5583883341499';
+    button.href = 'https://wa.me/27677519907';
     button.target = '_blank';
     button.className = 'sticky-whatsapp-btn';
     button.title = 'Fale conosco no WhatsApp';
