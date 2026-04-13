@@ -268,6 +268,12 @@ nav a.active::after {
     position: relative;
 }
 
+.dropdown > a::after {
+    content: ' ▾';
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -544,6 +550,26 @@ nav a.active::after {
         font-size: 0.82rem;
     }
 
+    .section-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.85rem;
+        max-width: 880px;
+        margin: 1rem auto 2rem;
+    }
+
+    .highlight-pill {
+        background: rgba(15, 95, 86, 0.08);
+        color: var(--primary-color);
+        border: 1px solid rgba(15, 95, 86, 0.16);
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        box-shadow: var(--shadow-sm);
+    }
+
     .section-header h2 {
         font-size: clamp(2rem, 4vw, 2.8rem);
         margin-bottom: 1rem;
@@ -789,9 +815,18 @@ nav a.active::after {
 }
 
 .plan .price {
-    margin: 0.6rem 0;
+    margin: 0.6rem 0 0.8rem;
     font-size: 1.78rem;
     font-weight: 700;
+    line-height: 1.2;
+}
+
+.plan .price .price-note {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
 }
 
 .plan ul {
@@ -1114,8 +1149,13 @@ footer > p {
         box-shadow: none;
         border: none;
         margin-top: 0.5rem;
-        margin-left: 1rem;
-        width: calc(100% - 1rem);
+        margin-left: 0;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .dropdown-menu li a {
+        padding-left: 1.5rem;
     }
 
     .service-box {

@@ -71,7 +71,7 @@
     <li><a href="https://wa.me/27677519907" target="_blank" class="nav-btn">Solicitar Orçamento</a></li>
 </ul>
         <button id="theme-toggle" class="theme-btn" title="Alternar Tema">🌙</button>
-        <button id="menu-toggle" class="menu-btn" title="Menu">
+        <button id="menu-toggle" class="menu-btn" title="Menu" aria-expanded="false" aria-label="Abrir menu">
             <svg class="hamburger" viewBox="0 0 24 24" width="24" height="24">
                 <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
             </svg>
@@ -120,24 +120,24 @@
     <!-- SERVICES -->
     <section class="services" id="services">
         <div class="section-header">
-            <p class="section-label">Serviços essenciais</p>
+            <p class="section-label">Serviços essenciais ✨</p>
             <h2>O que entregamos</h2>
             <p>Soluções completas de infraestrutura e presença digital para empresas que querem crescer sem complicação.</p>
         </div>
 
         <div class="service-box">
             <div class="card">
-                <h3>Sites Profissionais</h3>
+                <h3>💻 Sites Profissionais</h3>
                 <p>Rápidos. Modernos. Responsivos.</p>
                 <p>Feitos para atrair clientes e gerar resultados.</p>
             </div>
             <div class="card">
-                <h3>E-mail Corporativo</h3>
+                <h3>📧 E-mail Corporativo</h3>
                 <p>Seu negócio com mais credibilidade.</p>
                 <p>E-mails profissionais com o seu domínio</p>
             </div>
             <div class="card">
-                <h3>Domínios & Hospedagem</h3>
+                <h3>🌐 Domínios & Hospedagem</h3>
                 <p>Tudo configurado para você.</p>
                 <p>Registro de domínio, hospedagem segura, estável e sem complicação.</p>
             </div>
@@ -155,11 +155,11 @@
 
     <!-- PLANS -->
     <section class="plans" id="plans">
-        <h2>Planos Disponíveis</h2>
+        <h2>Planos Disponíveis 💼</h2>
         <div class="plan-grid">
             <div class="plan">
-                <h3>Site Inicial — a partir de </h3>
-                <p class ="price">R$ 299,00</p>
+                <h3>Site Inicial — a partir de</h3>
+                <p class ="price">R$ 299,00 <span class="price-note">R$ 99,90/mês</span></p>
                 <ul>
                     <li>Ideal para quem está começando</li>
                     <li>Design responsivo (celular e tablet)</li>
@@ -170,7 +170,7 @@
             </div>
             <div class="plan">
                 <h3>Site Otimizado — a partir de</h3>
-                <p class="price">R$ 499,00</p>
+                <p class="price">R$ 499,00 <span class="price-note">R$ 139,90/mês</span></p>
                 <ul>
                     <li>Mais páginas. Mais personalização</li>
                     <li>Integração com redes sociais</li>
@@ -182,7 +182,7 @@
             </div>
             <div class="plan">
                 <h3>Presença Total — a partir de</h3>
-                <p class="price">R$ 899,00</p>
+                <p class="price">R$ 899,00 <span class="price-note">R$ 199,90/mês</span></p>
                 <ul>
                     <li>Até 7 páginas</li>
                     <li>Design mais avançado</li>
@@ -195,7 +195,7 @@
                 <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Contratar Agora</a>
             </div>
         </div>
-        <p class="plan-note">Todos os planos podem incluir hospedagem comigo ou aceitar domínio próprio.</p>
+        <p class="plan-note">Todos os planos podem incluir hospedagem conosco ou aceitar domínio próprio.</p>
     </section>
 
     <!-- PROBLEMS -->
@@ -206,21 +206,27 @@
             <p>Eliminamos distrações técnicas para que você foque no seu negócio.</p>
         </div>
 
+        <div class="section-highlights">
+            <div class="highlight-pill">🚀 Entregas rápidas e claras</div>
+            <div class="highlight-pill">🎯 Soluções feitas para o seu negócio</div>
+            <div class="highlight-pill">🔧 Suporte técnico confiável</div>
+        </div>
+
         <div class="problems-grid">
             <div class="problem-card">
-                <h3>Seu site está lento ou desatualizado?</h3>
-                <p>Nós melhoramos a velocidade e o visual. para atrair mais clientes.</p>
+                <h3>⚠️ Seu site está lento ou desatualizado?</h3>
+                <p>Nós melhoramos a velocidade e o visual para atrair mais clientes.</p>
             </div>
             <div class="problem-card">
-                <h3>Problemas com e-mail?</h3>
+                <h3>📧 Problemas com e-mail?</h3>
                 <p>Configuramos e corrigimos falhas.</p>
             </div>
             <div class="problem-card">
-                <h3>Problemas com e-mail?</h3>
-                <p>Atendimento rápido e Respondemos rápido e resolvemos.</p>
+                <h3>🚀 Comunicação lenta ou confusa?</h3>
+                <p>Atendimento rápido e respostas claras para resolver tudo com eficiência.</p>
             </div>
             <div class="problem-card">
-                <h3>Domínio ou hospedagem confusa?s</h3>
+                <h3>🔒 Domínio ou hospedagem confusa?</h3>
                 <p>Cuidamos de tudo para que sua presença online seja simples e <strong>segura</strong>.</p>
             </div>
         </div>
@@ -232,6 +238,12 @@
             <p class="section-label">Confiança e clareza</p>
             <h2>Por que escolher a TechSpace</h2>
             <p>Soluções simples. Atendimento direto. Resultados rápidos.</p>
+        </div>
+
+        <div class="section-highlights">
+            <div class="highlight-pill">✅ Transparência em cada etapa</div>
+            <div class="highlight-pill">📈 Resultados focados em conversão</div>
+            <div class="highlight-pill">🤝 Atendimento direto com o especialista</div>
         </div>
 
         <div class="why-grid">
@@ -271,7 +283,7 @@
             </div>
             <div class="contact-info">
                 <div><strong>Telefone</strong><span><a href="tel:+5583883341499">+55 83 8834-1499</a></span></div>
-                <div><strong>E-mail</strong><span><a href="mailto:info@techspace.com">info@techspace.com</a></span></div>
+                <div><strong>E-mail</strong><span><a href="mailto:info@techsbrasil.com">info@techsbrasil.com</a></span></div>
             </div>
         </div>
     </section>
@@ -330,8 +342,8 @@
             <div class="footer-section">
                 <h3>Contato</h3>
                 <p>📞 <a href="tel:+5583883341499">+55 83 8834-1499</a></p>
-                <p>📧 <a href="mailto:info@techspace.com">info@techspace.com</a></p>
-                <p>🛠 <a href="mailto:suporte@techspace.com">suporte@techspace.com</a></p>
+                <p>📧 <a href="mailto:info@techsbrasil.com">info@techsbrasil.com</a></p>
+                <p>🛠 <a href="mailto:suporte@techsbrasil.com">suporte@techsbrasil.com</a></p>
                 <p>📍 São Bernardo do Campo, SP – Brasil</p>
             </div>
 
