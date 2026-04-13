@@ -73,6 +73,26 @@ behavior: 'smooth'
 
 });
 
+const whatsappNumber = '27677519907';
+
+function getWhatsAppLink(message = '') {
+    const base = `https://wa.me/${whatsappNumber}`;
+    return message ? `${base}?text=${message}` : base;
+}
+
+function normalizeWhatsAppLinks() {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        try {
+            const url = new URL(link.href, window.location.origin);
+            if (url.hostname.includes('wa.me')) {
+                link.href = getWhatsAppLink(url.searchParams.has('text') ? url.searchParams.get('text') : '');
+            }
+        } catch (error) {
+            // keep original if parsing fails
+        }
+    });
+}
+
 // WHATSAPP CONTACT FORM
 
 if (document.getElementById('enviarBtn')) {
@@ -92,7 +112,7 @@ if (document.getElementById('enviarBtn')) {
         const message = `Olá, meu nome é ${nome}. Empresa: ${empresa}. Email: ${email}. Telefone: ${telefone}. Área de interesse: ${area}. Mensagem: ${mensagem}. Gostaria de solicitar um orçamento.`;
 
         const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/27677519907?text=${encodedMessage}`;
+        const whatsappUrl = getWhatsAppLink(encodedMessage);
 
         window.open(whatsappUrl, '_blank');
     });
@@ -102,7 +122,7 @@ if (document.getElementById('enviarBtn')) {
 
 function createStickyWhatsAppButton() {
     const button = document.createElement('a');
-    button.href = 'https://wa.me/27677519907';
+    button.href = getWhatsAppLink();
     button.target = '_blank';
     button.className = 'sticky-whatsapp-btn';
     button.title = 'Fale conosco no WhatsApp';
@@ -121,6 +141,7 @@ function createStickyWhatsAppButton() {
 
 // Initialize sticky button on mobile screens
 window.addEventListener('DOMContentLoaded', function() {
+    normalizeWhatsAppLinks();
     if (window.innerWidth <= 768) {
         createStickyWhatsAppButton();
     }

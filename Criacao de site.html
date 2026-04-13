@@ -269,20 +269,20 @@
 
         /* ===== HERO SECTION ===== */
         .service-hero {
-            height: 85vh;
-            min-height: 600px;
+            min-height: 84vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-                url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1470&q=80");
+            background: linear-gradient(180deg, rgba(15, 95, 86, 0.95) 0%, rgba(15, 95, 86, 0.78) 40%, rgba(15, 95, 86, 0.85) 100%),
+                url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             position: relative;
             overflow: hidden;
+            padding: 3rem 1.5rem;
         }
 
         .service-hero::before {
@@ -292,20 +292,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-            animation: float 20s linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-60px); }
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 45%),
+                radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.06), transparent 35%);
+            pointer-events: none;
         }
 
         .hero-content {
-            max-width: 700px;
+            max-width: 720px;
             position: relative;
             z-index: 1;
             animation: fadeUp 1.2s ease;
+            margin: 0 auto;
         }
 
         .service-hero h1 {
@@ -313,30 +310,37 @@
             margin-bottom: 1rem;
             font-weight: 700;
             font-family: 'Poppins', sans-serif;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            line-height: 1.2;
+            text-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
         }
 
         .service-hero p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            line-height: 1.7;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.8;
             margin-bottom: 1rem;
-            opacity: 0.9;
+            opacity: 0.95;
             font-weight: 400;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-btn {
             background: linear-gradient(135deg, var(--accent-color), #e66a1a);
             color: white;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: 999px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1rem;
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             border: 2px solid transparent;
+            min-width: 180px;
         }
 
         .hero-btn:hover {
@@ -345,19 +349,61 @@
             background: linear-gradient(135deg, #e66a1a, var(--accent-color));
         }
 
+        .hero-btn-secondary {
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--primary-color);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            padding: 1rem 1.25rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 1.7rem;
+            margin-bottom: 0.35rem;
+            font-weight: 700;
+        }
+
+        .hero-stat span {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.5;
+        }
+
         .hero-highlights {
             display: flex;
             justify-content: center;
-            gap: 0.75rem;
-            margin: 1rem 0 1.5rem;
+            gap: 0.85rem;
+            margin: 1.5rem 0 1.75rem;
             flex-wrap: wrap;
             font-weight: 600;
-            color: #eaeaea;
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .hero-highlights span {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 0.55rem 0.9rem;
+            background: rgba(255, 255, 255, 0.13);
+            padding: 0.7rem 1rem;
             border-radius: 999px;
             font-size: 0.95rem;
         }
@@ -391,8 +437,25 @@
 
         .portfolio {
             padding: 4.5rem 8%;
-            background: #f7fafc;
+            background: linear-gradient(180deg, rgba(247, 250, 252, 0.97), rgba(248, 250, 252, 0.97)), url("https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80");
+            background-size: cover;
+            background-position: center;
             color: var(--dark-color);
+            position: relative;
+        }
+
+        .portfolio::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.88);
+            pointer-events: none;
+        }
+
+        .portfolio-grid,
+        .section-title {
+            position: relative;
+            z-index: 1;
         }
 
         .portfolio-grid {
@@ -968,7 +1031,7 @@
 
             <li><a href="Portofolio.html">Portfólio</a></li>
             <li><a href="Contato.html">Contato</a></li>
-            <li><a href="#" class="nav-btn">Solicitar Orçamento</a></li>
+            <li><a href="https://wa.me/27677519907" target="_blank" class="nav-btn">Solicitar Orçamento</a></li>
         </ul>
         <button id="theme-toggle" class="theme-btn" title="Alternar Tema">🌙</button>
         <button id="menu-toggle" class="menu-btn" title="Menu">
@@ -981,16 +1044,32 @@
     <!-- HERO -->
     <section class="service-hero">
         <div class="hero-content">
-            <h1>Criação de Sites Profissionais</h1>
-            <p>Sites modernos, responsivos e otimizados para SEO — prontos para converter visitantes em clientes.</p>
-            <p>Fale com nosso time e garanta entrega rápida, design sob medida e suporte constante.</p>
+            <h1>Sites profissionais que convertem clientes</h1>
+            <p>Design moderno, carregamento rápido e presença online estratégica para fortalecer sua marca.</p>
+            <p>Entregamos sites responsivos com foco em resultados e experiência móvel impecável.</p>
             <div class="hero-highlights">
-                <span>✅ Site mobile-first</span>
-                <span>✅ Integração WhatsApp</span>
-                <span>✅ Dominio + SEO inicial</span>
+                <span>✅ Performance mobile</span>
+                <span>✅ Layout moderno e claro</span>
+                <span>✅ Atendimento direto no WhatsApp</span>
             </div>
-            <a href="https://wa.me/27677519907" class="hero-btn" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
-            <a href="#site-packages" class="hero-btn" style="background:white; color: var(--primary-color); margin-left: 1rem;">Ver Planos</a>
+            <div class="hero-cta-group">
+                <a href="https://wa.me/27677519907" class="hero-btn" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+                <a href="#site-packages" class="hero-btn hero-btn-secondary">Ver Planos</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>4x</strong>
+                    <span>mais clientes alcançados</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>100%</strong>
+                    <span>sites mobile-friendly</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>+120</strong>
+                    <span>projetos já entregues</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1090,9 +1169,21 @@
     <section class="portfolio">
         <h2 class="section-title">Projetos Recentes</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-card"><img src="https://via.placeholder.com/400x250" alt="Projeto 1"><h3>Landing Page Empresa</h3><p>Website com foco em conversão e contato direto por WhatsApp.</p></div>
-            <div class="portfolio-card"><img src="https://via.placeholder.com/400x250" alt="Projeto 2"><h3>E-commerce Rápido</h3><p>Loja online com catálogo responsivo e carrinho integrado.</p></div>
-            <div class="portfolio-card"><img src="https://via.placeholder.com/400x250" alt="Projeto 3"><h3>Site Institucional</h3><p>Portal completo com páginas de serviços, blog e contato.</p></div>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Tela de landing page empresarial moderna">
+                <h3>Landing Page Empresa</h3>
+                <p>Website com foco em conversão e contato direto por WhatsApp.</p>
+            </div>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="E-commerce moderno em loja online">
+                <h3>E-commerce Rápido</h3>
+                <p>Loja online com catálogo responsivo e carrinho integrado.</p>
+            </div>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Computador exibindo site institucional corporativo">
+                <h3>Site Institucional</h3>
+                <p>Portal completo com páginas de serviços, blog e contato.</p>
+            </div>
         </div>
     </section>
 
@@ -1113,7 +1204,7 @@
             <div class="footer-section">
                 <h3>Contato</h3>
                 <p>Telefone: <a href="tel:+5583883341499">+55 83 8834-1499</a></p>
-                <p>Email: info@techspace.com</p>
+                <p>Email: <a href="mailto:info@techspace.com">info@techspace.com</a></p>
                 <p>São Bernardo do Campo, SP</p>
             </div>
             <div class="footer-section">
