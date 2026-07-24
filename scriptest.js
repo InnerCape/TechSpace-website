@@ -56,21 +56,94 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = typeof window.gsap !== 'undefined';
+  var hasScrollTrigger = hasGSAP && typeof window.ScrollTrigger !== 'undefined';
+
+  if (hasScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
   /* ---------- Scroll reveal ---------- */
-  var revealEls = document.querySelectorAll('[data-reveal]');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+
+  if (reducedMotion || !revealEls.length) {
+    // No motion preference, or nothing to reveal — just show everything.
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+
+  } else if (hasScrollTrigger) {
+    document.body.classList.add('js-reveal');
+    // GSAP-driven reveal: grouped by parent container so siblings
+    // (service cards, pricing cards, trust items…) stagger together
+    // instead of firing independently.
+    var buckets = new Map();
+    revealEls.forEach(function (el) {
+      var parent = el.parentElement;
+      if (!buckets.has(parent)) buckets.set(parent, []);
+      buckets.get(parent).push(el);
+    });
+
+    buckets.forEach(function (els) {
+      gsap.set(els, { opacity: 0, y: 26 });
+      ScrollTrigger.batch(els, {
+        start: 'top 87%',
+        once: true,
+        onEnter: function (batch) {
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            stagger: 0.1,
+            onComplete: function () {
+              batch.forEach(function (el) { el.classList.add('in-view'); });
+            }
+          });
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    });
 
-    revealEls.forEach(function (el) { io.observe(el); });
   } else {
-    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+    // GSAP not available — fall back to the original IntersectionObserver approach.
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('in-view'); });
+    }
+  }
+
+  /* ---------- Hero entrance timeline ---------- */
+  if (hasGSAP && !reducedMotion) {
+    var heroContent = document.querySelector('.hero-content');
+    var heroVisual = document.querySelector('.hero-visual');
+
+    if (heroContent || heroVisual) {
+      document.body.classList.add('js-reveal');
+      var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      if (heroContent) {
+        gsap.set(heroContent.querySelectorAll('h1, .hero-lead, .hero-buttons'), { opacity: 0, y: 24 });
+        tl.to(heroContent.querySelectorAll('h1'), { opacity: 1, y: 0, duration: 0.9 }, 0.1)
+          .to(heroContent.querySelectorAll('.hero-lead'), { opacity: 1, y: 0, duration: 0.8 }, 0.3)
+          .to(heroContent.querySelectorAll('.hero-buttons'), { opacity: 1, y: 0, duration: 0.8 }, 0.42);
+        heroContent.classList.add('in-view');
+      }
+
+      if (heroVisual) {
+        gsap.set(heroVisual, { opacity: 0, y: 30, scale: 0.98 });
+        tl.to(heroVisual, { opacity: 1, y: 0, scale: 1, duration: 1 }, 0.35);
+        heroVisual.classList.add('in-view');
+      }
+    }
   }
 
   /* ---------- Contact form (Contato.html) ---------- */
@@ -125,12 +198,9 @@ document.addEventListener('DOMContentLoaded', function () {
     updateProgress();
   }
 
-  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   /* ---------- Hero cursor spotlight + subtle parallax ---------- */
   var heroSection = document.querySelector('.hero');
   if (heroSection && !reducedMotion) {
-    var heroFieldEl = heroSection.querySelector('.hero-field');
     var spotlightEl = heroSection.querySelector('.hero-spotlight');
     heroSection.addEventListener('mousemove', function (e) {
       var rect = heroSection.getBoundingClientRect();
@@ -139,11 +209,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (spotlightEl) {
         spotlightEl.style.setProperty('--mx', x + 'px');
         spotlightEl.style.setProperty('--my', y + 'px');
-      }
-      if (heroFieldEl) {
-        var relX = (x / rect.width - 0.5) * 14;
-        var relY = (y / rect.height - 0.5) * 14;
-        heroFieldEl.style.transform = 'translate(' + relX + 'px,' + relY + 'px)';
       }
     });
   }
