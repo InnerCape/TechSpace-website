@@ -191,6 +191,68 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* ---------- WhatsApp tracking ---------- */
+  var WA_NUMBER = '27677519907';
+  var WA_BASE = 'https://wa.me/' + WA_NUMBER;
+
+  var waMessages = {
+    'nav-btn': function (page) {
+      return 'Olá! Gostaria de solicitar um orçamento (página: ' + page + ').';
+    },
+    'pricing-presenca': function () {
+      return 'Olá! Tenho interesse no Plano Presença Digital e gostaria de receber mais informações.';
+    },
+    'pricing-crescimento': function () {
+      return 'Olá! Tenho interesse no Plano Crescimento Digital e gostaria de receber mais informações.';
+    },
+    'pricing-ecossistema': function () {
+      return 'Olá! Tenho interesse no Plano Ecossistema Empresarial e gostaria de receber mais informações.';
+    },
+    'pricing-custom': function () {
+      return 'Olá! Tenho interesse em um plano personalizado e gostaria de receber mais informações.';
+    },
+    'cta-section': function (page) {
+      return 'Olá! Gostaria de solicitar um orçamento (página: ' + page + ').';
+    },
+    'sticky-whats': function (page) {
+      return 'Olá! Gostaria de solicitar um orçamento (página: ' + page + ').';
+    },
+    'contact-card': function () {
+      return 'Olá! Gostaria de solicitar um orçamento e receber mais informações.';
+    },
+    'services-cta': function () {
+      return 'Olá! Tenho interesse em construir um projeto e gostaria de receber mais informações.';
+    }
+  };
+
+  function getPageName() {
+    var path = window.location.pathname.split('/').pop() || 'index.html';
+    var pageMap = {
+      'index.html': 'Início',
+      'Criacao de site.html': 'Criação de Sites',
+      'Contato.html': 'Contato',
+      'Portofolio.html': 'Portfólio'
+    };
+    return pageMap[path] || path.replace('.html', '');
+  }
+
+  function trackWAClick(e) {
+    var link = e.currentTarget;
+    var source = link.getAttribute('data-wa-source');
+    if (!source) return;
+
+    e.preventDefault();
+    var messageFn = waMessages[source];
+    var page = getPageName();
+    var text = messageFn ? messageFn(page) : 'Olá! Gostaria de solicitar um orçamento (página: ' + page + ').';
+    var url = WA_BASE + '?text=' + encodeURIComponent(text);
+    window.open(url, '_blank');
+  }
+
+  document.querySelectorAll('[data-wa-source]').forEach(function (link) {
+    link.addEventListener('click', trackWAClick);
+  });
+
   /* ---------- Sticky WhatsApp button ---------- */
   var whatsBtn = document.getElementById('stickyWhats');
   if (whatsBtn) {
