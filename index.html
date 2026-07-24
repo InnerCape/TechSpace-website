@@ -46,6 +46,7 @@
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
 
+    <!-- NAVBAR -->
     <nav>
         <div class="logo">
             <a href="index.html"><img src="TS-logo.jpg" alt="TechSpace"></a>
@@ -63,7 +64,7 @@
             </li>
             <li><a href="Portofolio.html">Portfólio</a></li>
             <li><a href="Contato.html">Contato</a></li>
-            <li><a href="https://wa.me/27677519907?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento" target="_blank" class="nav-btn">Solicitar Orçamento</a></li>
+            <li><a href="https://wa.me/27677519907" target="_blank" class="nav-btn">Solicitar Orçamento</a></li>
         </ul>
 
         <button id="theme-toggle" class="theme-btn" title="Alternar Tema" aria-label="Alternar tema">🌙</button>
@@ -75,12 +76,14 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
-        <div class="hero-columns">
-            <div class="hero-content">
-                <span class="eyebrow">TechSpace | Desenvolvimento Web e Suporte em TI</span>
-                <h1>Criação de sites profissionais, suporte em TI, domínios e e-mail corporativo.</h1>
-                <p>A TechSpace ajuda pequenas e médias empresas a crescer online com soluções rápidas e confiáveis.</p>
+    <section class="hero hero-enterprise">
+        <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+        <div class="hero-spotlight" aria-hidden="true"></div>
+        <div class="wrap hero-columns">
+            <div class="hero-content" data-reveal>
+                <span class="eyebrow">TechSpace para empresas</span>
+                <h1>Experiências digitais de <em>nível empresarial.</em></h1>
+                <p class="hero-lead">Construímos plataformas web robustas, rápidas e estratégicas para empresas médias e grandes que não aceitam menos do que performance, design e resultado.</p>
 
                 <div class="hero-buttons">
                     <a href="Contato.html" class="btn btn-primary">Agendar uma Conversa</a>
@@ -202,18 +205,12 @@
     </section>
 
     <!-- SERVICES -->
-    <section class="services" id="services">
-        <div class="section-header">
-            <p class="section-label">Serviços essenciais ✨</p>
-            <h2>O que entregamos</h2>
-            <p>Soluções completas de infraestrutura e presença digital para empresas que querem crescer sem complicação.</p>
-        </div>
-
-        <div class="service-box">
-            <div class="card">
-                <h3>💻 Sites Profissionais</h3>
-                <p>Rápidos. Modernos. Responsivos.</p>
-                <p>Feitos para atrair clientes e gerar resultados.</p>
+    <section class="section section-dark" id="services">
+        <div class="wrap">
+            <div class="section-header center" data-reveal>
+                <span class="eyebrow" style="justify-content:center">O que entregamos</span>
+                <h2>Tudo o que precisa para lançar o seu website profissional</h2>
+                <p>Criamos websites modernos, rápidos e preparados para converter visitantes em clientes. Do domínio ao suporte, entregamos tudo.</p>
             </div>
 
             <div class="service-box-premium">
@@ -250,7 +247,7 @@
             </div>
 
             <div class="services-cta-wrap" data-reveal>
-                <a href="https://wa.me/27677519907?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20TechSpace" target="_blank" class="services-cta">
+                <a href="https://wa.me/27677519907" target="_blank" class="services-cta">
                     Vamos construir o seu projeto
                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                 </a>
@@ -258,73 +255,34 @@
         </div>
     </section>
 
-    <!-- HIGHLIGHT BACKGROUND -->
-    <section class="services-highlight" aria-label="Destaque de Portfólio">
-        <div class="highlight-content">
-            <h2>Sites, hospedagem e domínios com suporte dedicado</h2>
-            <p>Projetos completos para pequenas empresas, com opção de hospedagem conosco ou uso de domínio próprio.</p>
-            <a href="Portofolio.html" class="btn btn-cta">Conheça o Portfólio</a>
-        </div>
-    </section>
-
-    <!-- PLANS -->
-    <section class="plans" id="plans">
-        <h2>Planos Disponíveis 💼</h2>
-        <div class="plan-grid">
-            <div class="plan">
-                <h3>Site Inicial — a partir de</h3>
-                <p class ="price">R$ 299,00 <span class="price-note">R$ 99,90/mês</span></p>
-                <ul>
-                    <li>Ideal para quem está começando</li>
-                    <li>Design responsivo (celular e tablet)</li>
-                    <li>Botão de WhatsApp integrado</li>
-                    <li>Hospedagem básica opcional</li>
-                </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Contratar Agora</a>
+    <!-- HIGHLIGHT -->
+    <section class="wrap">
+        <div class="services-highlight services-highlight-media" data-reveal>
+            <div class="highlight-content">
+                <span class="eyebrow" style="color:#fff">Suporte contínuo</span>
+                <h2>Sites, hospedagem e domínios com suporte dedicado</h2>
+                <p>Projetos completos para pequenas empresas, com opção de hospedagem conosco ou uso de domínio próprio — e alguém real para responder quando você precisar.</p>
+                <a href="Portofolio.html" class="btn btn-light">Conheça o Portfólio</a>
             </div>
-            <div class="plan">
-                <h3>Site Otimizado — a partir de</h3>
-                <p class="price">R$ 499,00 <span class="price-note">R$ 139,90/mês</span></p>
-                <ul>
-                    <li>Mais páginas. Mais personalização</li>
-                    <li>Integração com redes sociais</li>
-                    <li>SEO básico (Google)</li>
-                    <li>Manutenção incluída por 2 meses</li>
-                    <li>Domínio próprio ou gerenciado por nós</li>
-                </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Contratar Agora</a>
-            </div>
-            <div class="plan">
-                <h3>Presença Total — a partir de</h3>
-                <p class="price">R$ 899,00 <span class="price-note">R$ 199,90/mês</span></p>
-                <ul>
-                    <li>Até 7 páginas</li>
-                    <li>Design mais avançado</li>
-                    <li>SEO otimizado</li>
-                    <li>Integrações (WhatsApp, Instagram, etc.)</li>
-                    <li>Suporte inicial após entrega</li>
-                    <li>Manutenção incluída por 3 meses</li>
-                    <li>Hospedagem premium e domínio seguro</li>
-                </ul>
-                <a href="https://wa.me/27677519907" class="plan-btn" target="_blank">Contratar Agora</a>
+            <div class="highlight-media">
+                <div class="img-slot on-dark" style="--slot-ratio:6/5">
+                    <svg class="img-slot-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+                    <span class="label">Foto da equipe ou do escritório</span>
+                    <span class="dims">Sugerido: 900×750px</span>
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- PROBLEMS -->
-    <section class="problems">
-        <div class="section-header">
-            <p class="section-label">Nós resolvemos</p>
-            <h2>Dores de quem precisa de TI e presença online</h2>
-            <p>Eliminamos distrações técnicas para que você foque no seu negócio.</p>
-        </div>
-
-        <div class="section-highlights">
-            <div class="highlight-pill">🚀 Entregas rápidas e claras</div>
-            <div class="highlight-pill">🎯 Soluções feitas para o seu negócio</div>
-            <div class="highlight-pill">🔧 Suporte técnico confiável</div>
-        </div>
+    <section class="section section-ambient" style="background:var(--paper-alt)">
+        <div class="wrap">
+            <div class="section-header center" data-reveal>
+                <span class="eyebrow" style="justify-content:center">Nós resolvemos</span>
+                <h2>Dores de quem precisa de TI e presença online</h2>
+                <p>Eliminamos distrações técnicas para que você foque no seu negócio.</p>
+            </div>
 
             <div class="problems-grid">
                 <div class="problem-card" data-reveal>
@@ -348,12 +306,13 @@
     </section>
 
     <!-- WHY CHOOSE -->
-    <section class="why-choose">
-        <div class="section-header">
-            <p class="section-label">Confiança e clareza</p>
-            <h2>Por que escolher a TechSpace</h2>
-            <p>Soluções simples. Atendimento direto. Resultados rápidos.</p>
-        </div>
+    <section class="section section-ambient">
+        <div class="wrap">
+            <div class="section-header center" data-reveal>
+                <span class="eyebrow" style="justify-content:center">Confiança e clareza</span>
+                <h2>Por que escolher a TechSpace</h2>
+                <p>Soluções simples. Atendimento direto. Resultados rápidos.</p>
+            </div>
 
             <div class="section-highlights" data-reveal>
                 <div class="highlight-pill">✅ Transparência em cada etapa</div>
@@ -445,13 +404,85 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact-preview" id="contact">
-        <div class="contact-card">
-            <div>
-                <p class="section-label">Fale com a TechSpace</p>
-                <h2>Precisa de suporte ou orçamento?</h2>
-                <p>Entre em contato agora para atendimento rápido, orçamento gratuito e orientação técnica completa.</p>
+    <!-- PREMIUM PRICING -->
+    <section class="pricing-premium" id="pricing">
+        <div class="wrap">
+            <div class="pricing-header" data-reveal>
+                <span class="eyebrow" style="justify-content:center">Investimento</span>
+                <h2>Soluções sob medida para empresas que querem crescer</h2>
+                <p>Cada projeto é dimensionado de acordo com os objetivos, o porte e a complexidade do seu negócio — sem pacotes genéricos.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- PRESENÇA DIGITAL -->
+                <div class="pricing-card" data-reveal>
+                    <div class="pricing-card-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 17v3.5"/></svg>
+                    </div>
+                    <div class="pricing-card-name">Presença Digital</div>
+                    <div class="pricing-card-desc">Para empresas que precisam de uma presença online sólida e profissional desde o primeiro contato.</div>
+                    <div class="pricing-price-block">
+                        <span class="pricing-from">Investimento a partir de</span>
+                        <div class="pricing-value"><span class="currency">R$</span>499</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Site institucional de alta performance</li>
+                        <li><span class="check">✓</span> Design alinhado à identidade da marca</li>
+                        <li><span class="check">✓</span> Estrutura pensada para geração de contato qualificado</li>
+                    </ul>
+                    <a href="https://wa.me/27677519907" target="_blank" class="pricing-cta">
+                        Falar com Especialista
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                    </a>
+                </div>
+
+                <!-- CRESCIMENTO DIGITAL (FEATURED) -->
+                <div class="pricing-card featured" data-reveal data-reveal-delay="1">
+                    <span class="pricing-badge popular">MAIS PROCURADO</span>
+                    <div class="pricing-card-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+                    </div>
+                    <div class="pricing-card-name">Crescimento Digital</div>
+                    <div class="pricing-card-desc">Para empresas que já têm presença online e querem transformar tráfego em resultado mensurável.</div>
+                    <div class="pricing-price-block">
+                        <span class="pricing-from">Investimento a partir de</span>
+                        <div class="pricing-value"><span class="currency">R$</span>899</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Arquitetura pensada para conversão</li>
+                        <li><span class="check">✓</span> SEO estratégico e otimização de performance</li>
+                        <li><span class="check">✓</span> Integrações com WhatsApp, CRM e automações</li>
+                        <li><span class="check">✓</span> Estrutura pronta para escalar com o negócio</li>
+                    </ul>
+                    <a href="https://wa.me/27677519907" target="_blank" class="pricing-cta">
+                        Falar com Especialista
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                    </a>
+                </div>
+
+                <!-- ECOSSISTEMA EMPRESARIAL (CUSTOM, NO FIXED PRICE) -->
+                <div class="pricing-card pricing-card-custom" data-reveal data-reveal-delay="2">
+                    <span class="pricing-badge premium">PERSONALIZADO</span>
+                    <div class="pricing-card-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                    </div>
+                    <div class="pricing-card-name">Ecossistema Empresarial</div>
+                    <div class="pricing-card-desc">Para empresas que precisam de uma plataforma digital robusta, sob medida, com suporte estratégico contínuo.</div>
+                    <div class="pricing-price-block">
+                        <span class="pricing-from">Investimento</span>
+                        <div class="pricing-value custom">Sob Consulta</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Plataforma web personalizada de ponta a ponta</li>
+                        <li><span class="check">✓</span> Integrações empresariais (ERP, CRM, pagamentos)</li>
+                        <li><span class="check">✓</span> Suporte prioritário e acompanhamento estratégico</li>
+                        <li><span class="check">✓</span> Escopo e investimento definidos em conjunto</li>
+                    </ul>
+                    <a href="Contato.html" class="pricing-cta">
+                        Agendar uma Conversa
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                    </a>
+                </div>
             </div>
 
             <p class="pricing-note">Cada proposta é construída em conjunto com o cliente, considerando objetivos, escala e complexidade do projeto — não trabalhamos com pacotes fechados.</p>
@@ -495,16 +526,11 @@
     </section>
 
     <!-- TESTIMONIALS -->
-
-    <section class="testimonials">
-
-        <h2>O que Nossos Clientes Dizem</h2>
-
-        <div class="testimonial-box">
-
-            <div class="testimonial">
-                <p>"A TechSpace criou um site incrível para minha empresa. Profissional e rápido!"</p>
-                <cite>- João Silva, Empresário</cite>
+    <section class="section section-ambient" style="background:var(--paper-alt)">
+        <div class="wrap">
+            <div class="section-header center" data-reveal>
+                <span class="eyebrow" style="justify-content:center">Depoimentos</span>
+                <h2>O que nossos clientes dizem</h2>
             </div>
 
             <div class="testimonial-box">
@@ -551,7 +577,7 @@
                     <h2>Precisa de suporte ou orçamento?</h2>
                     <p>Entre em contato agora para atendimento rápido, orçamento gratuito e orientação técnica completa.</p>
                     <div class="contact-actions" style="margin-top:1.6rem">
-                        <a href="https://wa.me/27677519907?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento" target="_blank" class="btn btn-primary">Chat no WhatsApp</a>
+                        <a href="https://wa.me/27677519907" target="_blank" class="btn btn-primary">Chat no WhatsApp</a>
                         <a href="Contato.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.3); color:#fff">Solicitar Orçamento</a>
                     </div>
                 </div>
@@ -564,20 +590,15 @@
     </section>
 
     <!-- CTA -->
-
-    <section class="cta">
-
-        <h2>Crie seu site profissional hoje
-            Seu negócio precisa estar online e visível no Google.
-            Nós ajudamos você a chegar lá.
-        </h2>
-       
-        <a href="https://wa.me/27677519907" target="_blank" class="btn">Falar no WhatsApp Agora</a>
-
+    <section class="wrap">
+        <div class="cta" data-reveal>
+            <h2>Crie seu site profissional hoje</h2>
+            <p>Seu negócio precisa estar online e visível no Google. Nós ajudamos você a chegar lá.</p>
+            <a href="https://wa.me/27677519907" target="_blank" class="btn btn-primary">Falar no WhatsApp Agora</a>
+        </div>
     </section>
 
     <!-- FOOTER -->
-
     <footer>
         <div class="footer-content">
             <div class="footer-section" data-reveal>
@@ -603,7 +624,7 @@
         <p>© 2026 TechSpace | Criação de Sites Profissionais</p>
     </footer>
 
-    <!-- AOS Library -->
+    <a href="https://wa.me/27677519907" target="_blank" class="sticky-whatsapp-btn" id="stickyWhats">💬 Fale conosco</a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

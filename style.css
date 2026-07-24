@@ -125,11 +125,6 @@ body {
     transition: background var(--t-med) var(--ease), color var(--t-med) var(--ease);
     overflow-x: hidden;
     position: relative;
-    padding-top: 72px;
-}
-
-@media (max-width: 859px) {
-    body { padding-top: 62px; }
 }
 
 /* Ambient colour blooms — keeps light sections from reading as flat white */
@@ -298,10 +293,8 @@ h1, h2, h3, h4 {
 
 /* =============== NAVBAR =============== */
 nav {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -2438,50 +2431,6 @@ footer > .wrap > p, footer > p {
     border-radius: var(--r-pill);
     font-weight: 600; font-size: 0.88rem;
     font-family: 'IBM Plex Mono', monospace;
-}
-
-/* =============== HIGHLIGHT IMAGE (premium showcase) =============== */
-/* Wraps the real "hands on" image in the "Suporte contínuo" highlight section */
-.highlight-image-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 6 / 5;
-    border-radius: var(--r-lg);
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
-}
-
-.highlight-image-wrap:hover {
-    transform: scale(1.03);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
-}
-
-.highlight-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--r-lg);
-    filter: contrast(1.08) brightness(0.98);
-    transition: filter 0.5s ease;
-}
-
-.highlight-image-wrap:hover .highlight-image {
-    filter: contrast(1.12) brightness(1.02);
-}
-
-/* Smooth out the hover on reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .highlight-image-wrap {
-        transition: none;
-    }
-    .highlight-image-wrap:hover {
-        transform: none;
-    }
 }
 
 /* =============== IMAGE SLOTS (placeholders for future photos) =============== */
