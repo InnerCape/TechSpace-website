@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirect old .html URLs to clean URLs
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Remove .html extension for requests
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Friendly URLs for the main pages
+RewriteRule ^portfolio/?$ /Portofolio.html [L]
+RewriteRule ^contato/?$ /Contato.html [L]
+RewriteRule ^criacao-de-sites/?$ /Criacao%20de%20site.html [L]
